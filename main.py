@@ -165,7 +165,7 @@ if st.button('Run it down'):
     hist = alt.Chart(df).mark_bar().encode(x = 'Games', 
                                                  y = 'count()').properties(height=250, width=670,).interactive()
     hist
-    st.markdown("<center>Each trial shown as a red line</center>", unsafe_allow_html=True)
+    st.markdown("<center>Each trial shown as a line</center>", unsafe_allow_html=True)
     progress_bar2 = st.progress(0)
     df['ext_LP'] = df['ext_LP'].apply(np.array)
     df_a = pd.DataFrame([pd.Series(x) for x in df.ext_LP]).transpose()
