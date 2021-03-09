@@ -1,0 +1,5 @@
+streamlit==0.76.0
+pandas==1.2.2
+numpy==1.19.3
+altair==4.1.0
+matplotlib==3.3.4
