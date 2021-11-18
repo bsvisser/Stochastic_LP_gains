@@ -202,17 +202,19 @@ if st.button('Run it down'):
     plt.ylim([ymin-20, None])
     round_ymin = np.round(ymin/400)*400
     round_ymax = np.ceil(ymax/400)*400
-    if round_ymax > 2800:
-        round_ymax = 2800
+    if round_ymax > 5000:
+        round_ymax = 5000
     if np.sign(round_ymin) == -1:
         round_ymin = 0
     num_regions = int((round_ymax-round_ymin)/400)
     for i in range(num_regions):
         plt.hlines(y=round_ymin+i*400, xmin=0, xmax=xmax, colors=colors[int((round_ymin+i*400)//400)], linestyles='--', lw=1, label=ranks[int((round_ymin+i*400)//400)], alpha = 0.9)
         plt.text(xmax*0.99, round_ymin+i*400+400*0.05, f"{ranks[int((round_ymin+i*400)//400)]}", color = colors[int((round_ymin+i*400)//400)], horizontalalignment='right',)
-        plt.axhspan(round_ymin+i*400, round_ymin+i*400+400, facecolor=colors[int((round_ymin+i*400)//400)], alpha=0.2)
+        plt.axhspan(round_ymin+i*400, round_ymin+i*400+400, facecolor = colors[int((round_ymin+i*400)//400)], alpha=0.2)
+        
         if i == "Apex":
-            plt.axhspan(round_ymin+i*400, round_ymax, facecolor=colors[int((round_ymin+i*400)//400)], alpha=0.2)
+            plt.axhspan(round_ymin+i*400, round_ymax, facecolor = colors[int((round_ymin+i*400)//400)], alpha=0.2)
+            
         progress_bar2.progress((i*0.9)/(num_regions))
 
     plt.xlabel("Games played")
