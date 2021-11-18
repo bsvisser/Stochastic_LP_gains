@@ -213,7 +213,10 @@ if st.button('Run it down'):
         plt.axhspan(round_ymin+i*400, round_ymin+i*400+400, facecolor = colors[int((round_ymin+i*400)//400)], alpha=0.2)
         
         if i == "Apex":
-            plt.axhspan(3000, 3500, facecolor = colors[int((round_ymin+i*400)//400)], alpha=0.2)
+            round_ymin
+            ymax
+            
+            plt.axhspan(round_ymin+i*400, ymax, facecolor = colors[int((round_ymin+i*400)//400)], alpha=0.2)
             
         progress_bar2.progress((i*0.9)/(num_regions))
 
