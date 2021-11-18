@@ -53,6 +53,9 @@ with settings_expander:
     wr = buff2.text_input("Est. winrate (i.e. 0.5 for a 50% wr)", 0.52)
     n = st.slider(
         "Number of trials", 1, 5000, 750
+    ),
+    decay = st.checkbox(
+        "Decay"
     )
 
 try:
