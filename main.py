@@ -187,6 +187,7 @@ if st.button('Run it down'):
     hist = alt.Chart(df).mark_bar().encode(x = 'Games', 
                                                  y = 'count()').properties(height=250, width=670,).interactive()
     hist
+    
     st.markdown("<center>Each trial shown as a line</center>", unsafe_allow_html=True)
     progress_bar2 = st.progress(0)
     df['ext_LP'] = df['ext_LP'].apply(np.array)
@@ -197,8 +198,8 @@ if st.button('Run it down'):
     plt.ylim([ymin-20, None])
     round_ymin = np.round(ymin/400)*400
     round_ymax = np.ceil(ymax/400)*400
-    if round_ymax > 2400:
-        round_ymax = 2400
+    if round_ymax > 2800:
+        round_ymax = 2800
     if np.sign(round_ymin) == -1:
         round_ymin = 0
     num_regions = int((round_ymax-round_ymin)/400)
