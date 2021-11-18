@@ -140,6 +140,7 @@ def stochastic_sim(startl, startd, endl, endd, gain, loss, n, wr):
                         promo_results = random.choices([True, False], weights = [wr, 1-wr], k =5)
                         if (sum(promo_results) >=3): #won promo
                             games+=sum(promo_results)
+                            curRank
                             if curRank[0] == "Diamond" and curRank[1] == 1:
                                 curRank[0] = "Apex"
                                 lp = 1
