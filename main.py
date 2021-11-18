@@ -37,6 +37,7 @@ endl = left_column.add_selectbox = st.selectbox(
 )
 if endl == "Apex":
     endd = right_column.text_input("End LP", 100)
+    apex = True
     
 else:
     endd = right_column.add_selectbox = st.selectbox(
@@ -79,9 +80,15 @@ if ranks.index(startl) > ranks.index(endl):
     st.markdown("<b>Your goal can't be lower than where you're starting</b>", unsafe_allow_html=True)
     st.stop() 
     
-if divs.index(startd) > divs.index(endd) and startl==endl:
-    st.markdown("<b>Your goal can't be lower than where you're starting</b>", unsafe_allow_html=True)
-    st.stop()
+if apex:
+    if type(startd) == int and startd < endd:
+        st.markdown("<b>Your goal can't be lower than where you're starting</b>", unsafe_allow_html=True)
+        st.stop()
+    
+else:
+    if divs.index(startd) > divs.index(endd) and startl==endl:
+        st.markdown("<b>Your goal can't be lower than where you're starting</b>", unsafe_allow_html=True)
+        st.stop()
     
 def stochastic_sim(startl, startd, endl, endd, gain, loss, n, wr):
     df_list = []
