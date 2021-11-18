@@ -211,7 +211,7 @@ if st.button('Run it down'):
         plt.hlines(y=round_ymin+i*400, xmin=0, xmax=xmax, colors=colors[int((round_ymin+i*400)//400)], linestyles='--', lw=1, label=ranks[int((round_ymin+i*400)//400)], alpha = 0.9)
         plt.text(xmax*0.99, round_ymin+i*400+400*0.05, f"{ranks[int((round_ymin+i*400)//400)]}", color = colors[int((round_ymin+i*400)//400)], horizontalalignment='right',)
         plt.axhspan(round_ymin+i*400, round_ymin+i*400+400, facecolor=colors[int((round_ymin+i*400)//400)], alpha=0.2)
-        if num_regions == "Apex":
+        if i == "Apex":
             plt.axhspan(round_ymin+i*400, round_ymax, facecolor=colors[int((round_ymin+i*400)//400)], alpha=0.2)
         progress_bar2.progress((i*0.9)/(num_regions))
 
