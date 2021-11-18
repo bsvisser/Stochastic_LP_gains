@@ -202,8 +202,8 @@ if st.button('Run it down'):
     plt.ylim([ymin-20, None])
     round_ymin = np.round(ymin/400)*400
     round_ymax = np.ceil(ymax/400)*400
-    if round_ymax > 5000:
-        round_ymax = 5000
+    if round_ymax > 4000:
+        round_ymax = 4000
     if np.sign(round_ymin) == -1:
         round_ymin = 0
     num_regions = int((round_ymax-round_ymin)/400)
