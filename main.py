@@ -36,7 +36,7 @@ endl = left_column.add_selectbox = st.selectbox(
     (ranks)
 )
 if endl == "Apex":
-    endd = right_column.text_input("LP gain per win", 20)
+    endd = right_column.text_input("End LP", 100)
     
 else:
     endd = right_column.add_selectbox = st.selectbox(
