@@ -91,6 +91,7 @@ else:
         st.stop()
     
 def stochastic_sim(startl, startd, endl, endd, gain, loss, n, wr):
+    apex = False
     df_list = []
     wr = float(wr)
     for i in range(n):
