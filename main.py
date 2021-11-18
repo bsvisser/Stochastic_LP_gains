@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sat Feb 20 14:29:13 2021
-
 @author: Brent Visser
 """
 import streamlit as st
@@ -12,10 +11,10 @@ import altair as alt
 from matplotlib import pyplot as plt
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
-ranks = ["Iron","Bronze", "Silver", "Gold", "Platinum", "Diamond"]
+ranks = ["Iron","Bronze", "Silver", "Gold", "Platinum", "Diamond", "Apex"]
 divs = ["IV","III", "II", "I"] 
 
-colors = ["#5c5653", "#945639", "#4a5a5b", "#b5732c", "#4e7875", "#54519d"]
+colors = ["#5c5653", "#945639", "#4a5a5b", "#b5732c", "#4e7875", "#54519d", "#B71DC9"]
 
 st.title('Monte-Carlo simulation for climbing')
 settings_expander = st.beta_expander("Settings for simulation")
@@ -36,10 +35,14 @@ endl = left_column.add_selectbox = st.selectbox(
     "Goal league",
     (ranks)
 )
-endd = right_column.add_selectbox = st.selectbox(
-    "Goal div",
-    (divs),
-)
+if endl == "Apex":
+    endd = gain = right_column.text_input("LP gain per win", 20)
+    
+else:
+    endd = right_column.add_selectbox = st.selectbox(
+        "Goal div",
+        (divs),
+    )
 with settings_expander:
     buff, col, buff2 = st.beta_columns([1,1,1])
     gain = buff.text_input("LP gain per win", 20)
