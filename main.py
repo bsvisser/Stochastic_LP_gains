@@ -131,7 +131,7 @@ def stochastic_sim(startl, startd, endl, endd, gain, loss, n, wr):
                 if apex:
                     if  lp > endd:
                         belowRank = False
-                    if lp > 100:
+                if lp > 100:
                     if divs.index(curRank[1]) < (len(divs)-1): #division pro
                         lp = lp-100
                         curRank[1] = divs[divs.index(curRank[1])+1]
