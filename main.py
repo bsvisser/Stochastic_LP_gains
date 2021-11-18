@@ -36,7 +36,7 @@ endl = left_column.add_selectbox = st.selectbox(
     (ranks)
 )
 if endl == "Apex":
-    endd = right_column.text_input("End LP", 100)
+    endd = st.text_input("End LP", 100)
     apex = True
     
 else:
