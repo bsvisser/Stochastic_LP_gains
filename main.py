@@ -207,13 +207,14 @@ if st.button('Run it down'):
     num_regions = int((round_ymax-round_ymin)/400)
     
     for i in range(num_regions):
-        plt.hlines(y=round_ymin+i*400, xmin=0, xmax=xmax, colors=colors[int((round_ymin+i*400)//400)], linestyles='--', lw=1, label=ranks[int((round_ymin+i*400)//400)], alpha = 0.9)
-        plt.text(xmax*0.99, round_ymin+i*400+400*0.05, f"{ranks[int((round_ymin+i*400)//400)]}", color = colors[int((round_ymin+i*400)//400)], horizontalalignment='right',)
-        plt.axhspan(round_ymin+i*400, round_ymin+i*400+400, facecolor = colors[int((round_ymin+i*400)//400)], alpha=0.2)
-        
-        
         if i > 2400:
             plt.axhspan(round_ymin+i*400, ymax, facecolor = "#B71DC9", alpha=0.2)
+        else:
+            plt.hlines(y=round_ymin+i*400, xmin=0, xmax=xmax, colors=colors[int((round_ymin+i*400)//400)], linestyles='--', lw=1, label=ranks[int((round_ymin+i*400)//400)], alpha = 0.9)
+            plt.text(xmax*0.99, round_ymin+i*400+400*0.05, f"{ranks[int((round_ymin+i*400)//400)]}", color = colors[int((round_ymin+i*400)//400)], horizontalalignment='right',)
+            plt.axhspan(round_ymin+i*400, round_ymin+i*400+400, facecolor = colors[int((round_ymin+i*400)//400)], alpha=0.2)
+            
+        
             
         progress_bar2.progress((i*0.9)/(num_regions))
 
