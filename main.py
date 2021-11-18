@@ -10,6 +10,8 @@ import random
 import altair as alt
 from matplotlib import pyplot as plt
 
+apex = False
+
 st.set_option('deprecation.showPyplotGlobalUse', False)
 ranks = ["Iron","Bronze", "Silver", "Gold", "Platinum", "Diamond", "Apex"]
 divs = ["IV","III", "II", "I"] 
