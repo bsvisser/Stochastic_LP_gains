@@ -212,6 +212,8 @@ if st.button('Run it down'):
         plt.text(xmax*0.99, round_ymin+i*400+400*0.05, f"{ranks[int((round_ymin+i*400)//400)]}", color = colors[int((round_ymin+i*400)//400)], horizontalalignment='right',)
         plt.axhspan(round_ymin+i*400, round_ymin+i*400+400, facecolor = colors[int((round_ymin+i*400)//400)], alpha=0.2)
         
+        i
+        
         if i == "Apex":
             round_ymin
             ymax
