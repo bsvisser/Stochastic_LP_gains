@@ -128,7 +128,10 @@ def stochastic_sim(startl, startd, endl, endd, gain, loss, n, wr):
                     pass
             else:
                 lp+=gain
-                if lp > 100:
+                if apex:
+                    if  lp > endd:
+                        belowRank = False
+                    if lp > 100:
                     if divs.index(curRank[1]) < (len(divs)-1): #division pro
                         lp = lp-100
                         curRank[1] = divs[divs.index(curRank[1])+1]
@@ -136,9 +139,17 @@ def stochastic_sim(startl, startd, endl, endd, gain, loss, n, wr):
                     else: #league promo
                         promo_results = random.choices([True, False], weights = [wr, 1-wr], k =5)
                         if (sum(promo_results) >=3): #won promo
-                            curRank[0] = ranks[ranks.index(curRank[0])+1]
-                            curRank[1] = divs[0]
-                            lp = 0
+                            games+=sum(promo_results)
+                            if curRank[0] == "Diamond" and curRank[1] == 1:
+                                curRank[0] = "Apex"
+                                lp = 1
+                                
+                            
+                            else:
+                                curRank[0] = ranks[ranks.index(curRank[0])+1]
+                                curRank[1] = divs[0]
+                                lp = 0
+                                
                             
                         else: #loss promo
                             lp -=loss
@@ -152,6 +163,7 @@ def stochastic_sim(startl, startd, endl, endd, gain, loss, n, wr):
                 #check to see if goal reached:
                 if curRank[0] == goalRank[0] and curRank[1] == goalRank[1]:
                     belowRank = False
+                    
             ext_lp = lp + ranks.index(curRank[0])*400+divs.index(curRank[1])*100
             ext_lp_hist.append(ext_lp)
         df_list.append([games,ext_lp_hist])
