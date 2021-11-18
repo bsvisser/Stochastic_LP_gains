@@ -144,7 +144,8 @@ def stochastic_sim(startl, startd, endl, endd, gain, loss, n, wr):
                                 curRank[0] = "Apex"
                                 lp = 1
                                 
-                            
+                            if curRank[0] == "Apex":
+                                pass
                             else:
                                 curRank[0] = ranks[ranks.index(curRank[0])+1]
                                 curRank[1] = divs[0]
