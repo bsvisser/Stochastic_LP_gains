@@ -207,7 +207,7 @@ if st.button('Run it down'):
     num_regions = int((round_ymax-round_ymin)/400)
     
     for i in range(num_regions):
-        if i > 2400:
+        if round_ymin+i*400 > 2400:
             plt.axhspan(round_ymin+i*400, ymax, facecolor = "#B71DC9", alpha=0.2)
         else:
             plt.hlines(y=round_ymin+i*400, xmin=0, xmax=xmax, colors=colors[int((round_ymin+i*400)//400)], linestyles='--', lw=1, label=ranks[int((round_ymin+i*400)//400)], alpha = 0.9)
