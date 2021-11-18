@@ -128,7 +128,7 @@ def stochastic_sim(startl, startd, endl, endd, gain, loss, n, wr):
                     pass
             else:
                 lp+=gain
-                if apex:
+                if curRank[0] == "Apex":
                     if  lp > endd:
                         belowRank = False
                 if lp > 100:
