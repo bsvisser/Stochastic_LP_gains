@@ -176,9 +176,7 @@ def stochastic_sim(startl, startd, endl, endd, gain, loss, n, wr):
         df_list.append([games,ext_lp_hist])
         df= pd.DataFrame(df_list,columns = ["Games", "ext_LP"])
     return df
-n
-type(n)
-n = int(n)
+n = int(n[0])
 
 alphaline = np.e**-(n/800)
 if alphaline < 0.05:
