@@ -63,7 +63,8 @@ try:
 except:
     st.error("Only numbers please") 
     st.stop() 
-
+print(n)
+print(type(n))
 if wr <= 0 or gain <= 0:
     st.markdown("<b>Even you can't be this bad.</b>", unsafe_allow_html=True)
     st.stop() 
