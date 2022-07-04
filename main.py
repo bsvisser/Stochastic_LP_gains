@@ -63,8 +63,7 @@ try:
 except:
     st.error("Only numbers please") 
     st.stop() 
-print(n)
-print(type(n))
+
 if wr <= 0 or gain <= 0:
     st.markdown("<b>Even you can't be this bad.</b>", unsafe_allow_html=True)
     st.stop() 
@@ -177,7 +176,10 @@ def stochastic_sim(startl, startd, endl, endd, gain, loss, n, wr):
         df_list.append([games,ext_lp_hist])
         df= pd.DataFrame(df_list,columns = ["Games", "ext_LP"])
     return df
+print(n)
+print(type(n))
 n = int(n)
+
 alphaline = np.e**-(n/800)
 if alphaline < 0.05:
     alphaline = 0.05
